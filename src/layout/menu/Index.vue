@@ -24,6 +24,7 @@
         <span>{{ item.children[0].meta.title }}</span>
       </template>
     </el-menu-item>
+
     <!-- 有子路由且个数大于一个 -->
     <el-sub-menu
       v-if="item.children && item.children.length > 1 && !item.meta.hidden"
@@ -65,6 +66,6 @@ export default {
 
 <style scoped>
 div {
-color: white;
+  color: white;
 }
 </style>
