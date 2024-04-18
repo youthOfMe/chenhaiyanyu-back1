@@ -20,7 +20,6 @@
                 <template #default="{ row }">
                      <div class="dialog-footer">
                         <el-button icon="user" size="small" >权限分配</el-button>
-                        <el-button icon="Edit" size="small" >编辑</el-button>
                         <el-button icon="Delete" size="small" type="danger">删除</el-button>
                     </div>
                 </template>
@@ -69,7 +68,7 @@ onMounted(() => {
 });
 async function loadData() {
   loading.value = true;
-  const res = await post("/userrole", params.value);//
+  const res = await post("/employeerole", params.value);//
   Data.value = res.data.list;
   total.value = res.data.total;
   loading.value = false;

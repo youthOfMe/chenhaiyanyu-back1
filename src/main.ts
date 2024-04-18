@@ -19,6 +19,7 @@ import '@/styles/index.scss'
 // 引入大仓库
 import pinia from './store'
 
+import "../mock/employee/info.ts"
 // 获取vue应用实例
 const app = createApp(App)
 // 安装element-plus插件

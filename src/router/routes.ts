@@ -99,7 +99,7 @@ export const constantRoute = [
     children: [
       {
         path: '/product/trademark',
-        component: () => import('@/views/product/trademark/Trademark.vue'),
+        component: () => import('@/views/acl/role/Index.vue'),
         name: 'Trademark',
         meta: {
           title: '品牌管理',
@@ -152,7 +152,7 @@ export const constantRoute = [
     children: [
       {
         path: '/employee/info',
-        component: () => import('@/views/employee/info/Info.vue'),
+        component: () => import('@/views/employee/info/info.vue'),
         name: 'employee-info',
         meta: {
           title: '基础信息',
@@ -161,12 +161,22 @@ export const constantRoute = [
         },
       },
       {
-        path: '/employee/info',
-        component: () => import('@/views/employee/info/Info.vue'),
-        name: 'employee-info',
+        path: '/employee/manage',
+        component: () => import('@/views/employeerole/index.vue'),
+        name: 'employee-manage',
         meta: {
-          title: '基础信息',
-          icon: 'ShoppingCartFull',
+          title: '角色管理',
+          icon: 'UserFilled',
+          hidden: false,
+        },
+      },
+      {
+        path: '/employee/limit',
+        component: () => import('@/views/employeelimit/index.vue'),
+        name: 'employee-limit',
+        meta: {
+          title: '权限管理',
+          icon: 'Monitor',
           hidden: false,
         },
       },

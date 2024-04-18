@@ -5,8 +5,11 @@
                     <el-input placeholder="请输入用户名进行搜索"></el-input>
             </el-form-item>
             <el-form-item >
-                <el-button slot="append" style="margin-left: 5px;">搜索</el-button>
-                <el-button type="primary" slot="append" style="margin-left: 5px;">重置</el-button>
+                <el-button type="primary" slot="append" style="margin-left: 5px;">添加角色</el-button>
+                <el-button  slot="append" style="margin-left: 5px;">编辑角色</el-button>
+                <el-button slot="append" style="margin-left: 5px;">删除角色</el-button>
+                <el-button slot="append" style="margin-left: 5px;">搜索角色</el-button>
+
             </el-form-item>
         </el-form>
     </el-card>
@@ -21,7 +24,7 @@
                      <div class="dialog-footer">
                         <el-button icon="user" size="small" >权限分配</el-button>
                         <el-button icon="Edit" size="small" >编辑</el-button>
-                        <el-button icon="Delete" size="small" type="danger">删除</el-button>
+                        <el-button icon="Delete" size="small">删除</el-button>
                     </div>
                 </template>
                 </el-table-column>
@@ -69,7 +72,7 @@ onMounted(() => {
 });
 async function loadData() {
   loading.value = true;
-  const res = await post("/userrole", params.value);//
+  const res = await post("/employeerole", params.value);//
   Data.value = res.data.list;
   total.value = res.data.total;
   loading.value = false;
