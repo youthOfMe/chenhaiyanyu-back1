@@ -19,12 +19,12 @@ import '@/styles/index.scss'
 // 引入大仓库
 import pinia from './store'
 
-import "../mock/employee/info.ts"
+import '../mock/employee/info.ts'
 // 获取vue应用实例
 const app = createApp(App)
 // 安装element-plus插件
 app.use(ElementPlus, {
-    locale: zhCn,
+  locale: zhCn,
 })
 // 注册路由模板
 app.use(router as any)

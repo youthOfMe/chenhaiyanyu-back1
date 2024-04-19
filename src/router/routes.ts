@@ -43,6 +43,149 @@ export const constantRoute = [
       icon: 'Platform',
     },
   },
+
+  {
+    path: '/officGood',
+    component: () => import('@/layout/Index.vue'),
+    name: 'officGood',
+    meta: {
+      title: '官方商品',
+      hidden: false,
+      icon: 'Goods',
+    },
+    redirect: '/officGood/officCom',
+    children: [
+      {
+        path: '/officGood/officCom',
+        component: () => import('@/views/official-merchandise/offic-product/OfficProduct.vue'),
+        name: 'OfficCom',
+        meta: {
+          title: '商品管理',
+          hidden: false,
+          icon: 'Goods',
+        },
+      },
+      {
+        path: '/officGood/officSort',
+        component: () => import('@/views/official-merchandise/offic-sort/OfficeSort.vue'),
+        name: 'OfficSort',
+        meta: {
+          title: '分类管理',
+          hidden: false,
+          icon: 'UserFilled',
+        },
+      },
+      {
+        path: '/officGood/officPackage',
+        component: () => import('@/views/official-merchandise/offic-package/OfficPackage.vue'),
+        name: 'OfficPackage',
+        meta: {
+          title: '套餐管理',
+          hidden: false,
+          icon: 'Monitor',
+        },
+      },
+      {
+        path: '/officGood/officStore',
+        component: () => import('@/views/official-merchandise/offic-store-config/OfficStore.vue'),
+        name: 'OfficStore',
+        meta: {
+          title: '店铺配置',
+          hidden: false,
+          icon: 'Monitor',
+        },
+      },
+    ],
+  },
+
+  {
+    path: '/thirdGood',
+    component: () => import('@/layout/Index.vue'),
+    name: 'thirdGood',
+    meta: {
+      title: '第三方商品',
+      hidden: false,
+      icon: 'Goods',
+    },
+    redirect: '/thirdGood/thirdCom',
+    children: [
+      {
+        path: '/thirdGood/thirdCom',
+        component: () => import('@/views/third-part-product/third-product/ThirdProduct.vue'),
+        name: 'ThirdCom',
+        meta: {
+          title: '商品管理',
+          hidden: false,
+          icon: 'Goods',
+        },
+      },
+      {
+        path: '/thirdGood/thirdSort',
+        component: () => import('@/views/third-part-product/third-sort/ThirdSort.vue'),
+        name: 'ThirdSort',
+        meta: {
+          title: '分类管理',
+          hidden: false,
+          icon: 'UserFilled',
+        },
+      },
+      {
+        path: '/thirdGood/thirdPackage',
+        component: () => import('@/views/third-part-product/third-package/ThirdPackage.vue'),
+        name: 'ThirdPackage',
+        meta: {
+          title: '套餐管理',
+          hidden: false,
+          icon: 'Monitor',
+        },
+      },
+    ],
+  },
+
+  {
+    path: '/programGood',
+    component: () => import('@/layout/Index.vue'),
+    name: 'programGood',
+    meta: {
+      title: '程序商品',
+      hidden: false,
+      icon: 'Goods',
+    },
+    redirect: '/programGood/comManage',
+    children: [
+      {
+        path: '/programGood/comManage',
+        component: () => import('@/views/program-good/com-manage/ComManage.vue'),
+        name: 'ComManage',
+        meta: {
+          title: '商品管理',
+          hidden: false,
+          icon: 'Goods',
+        },
+      },
+      {
+        path: '/programGood/sortManage',
+        component: () => import('@/views/program-good/sort-manage/SortManage.vue'),
+        name: 'SortManage',
+        meta: {
+          title: '分类管理',
+          hidden: false,
+          icon: 'UserFilled',
+        },
+      },
+      {
+        path: '/programGood/packageManage',
+        component: () => import('@/views/program-good/package-manage/PackageManage.vue'),
+        name: 'PackageManage',
+        meta: {
+          title: '套餐管理',
+          hidden: false,
+          icon: 'Monitor',
+        },
+      },
+    ],
+  },
+
   {
     path: '/acl',
     component: () => import('@/layout/Index.vue'),
@@ -182,6 +325,7 @@ export const constantRoute = [
       },
     ],
   },
+
   {
     path: '/apply',
     component: () => import('@/layout/Index.vue'),
