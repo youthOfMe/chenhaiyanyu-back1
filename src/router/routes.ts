@@ -2,7 +2,7 @@
 export const constantRoute = [
   {
     path: '/login',
-    component: () => import('@/views/login/Index.vue'),
+    component: () => import('@/views/login-view/LoginView.vue'),
     name: 'login', // 命名路由
     meta: {
       title: '登录',
@@ -19,7 +19,7 @@ export const constantRoute = [
     children: [
       {
         path: '/home',
-        component: () => import('@/views/home/Index.vue'),
+        component: () => import('@/views/home-view/HomeView.vue'),
         meta: {
           title: '主页',
           hidden: false,
@@ -35,7 +35,7 @@ export const constantRoute = [
   },
   {
     path: '/screen',
-    component: () => import('@/views/screen/Index.vue'),
+    component: () => import('@/views/screen-view/ScreenView.vue'),
     name: 'Screen',
     meta: {
       title: '数据大屏',
@@ -142,7 +142,7 @@ export const constantRoute = [
   {
     path: '/employee',
     component: () => import('@/layout/Index.vue'),
-    name: 'Product',
+    name: 'employee',
     meta: {
       title: '员工管理',
       icon: 'Goods',
@@ -152,7 +152,7 @@ export const constantRoute = [
     children: [
       {
         path: '/employee/info',
-        component: () => import('@/views/employee/info/info.vue'),
+        component: () => import('@/views/employee-manage/employee-message/EmployeeMessage.vue'),
         name: 'employee-info',
         meta: {
           title: '基础信息',
@@ -162,7 +162,7 @@ export const constantRoute = [
       },
       {
         path: '/employee/manage',
-        component: () => import('@/views/employeerole/index.vue'),
+        component: () => import('@/views/employee-manage/employee-role/EmployeeRole.vue'),
         name: 'employee-manage',
         meta: {
           title: '角色管理',
@@ -172,7 +172,7 @@ export const constantRoute = [
       },
       {
         path: '/employee/limit',
-        component: () => import('@/views/employeelimit/index.vue'),
+        component: () => import('@/views/employee-manage/employee-limit/EmployeeLimit.vue'),
         name: 'employee-limit',
         meta: {
           title: '权限管理',
@@ -183,8 +183,42 @@ export const constantRoute = [
     ],
   },
   {
+    path: '/apply',
+    component: () => import('@/layout/Index.vue'),
+    name: 'Apply',
+    meta: {
+      title: '应用配置',
+      icon: 'Goods',
+      hidden: false,
+    },
+    redirect: '/apply/note/',
+    children: [
+      {
+        path: '/apply/note',
+        component: () => import('@/views/apply-set/note-set/NoteSet.vue'),
+        name: 'note',
+        meta: {
+          title: '公告配置',
+          icon: 'UserFilled',
+          hidden: false,
+        },
+      },
+      {
+        path: '/apply/message',
+        component: () => import('@/views/apply-set/message-set/MessageSet.vue'),
+        name: 'message',
+        meta: {
+          title: '信息配置',
+          icon: 'ShoppingCartFull',
+          hidden: false,
+        },
+      },
+      
+    ],
+  },
+  {
     path: '/404',
-    component: () => import('@/views/404/Index.vue'),
+    component: () => import('@/views/not-found/NotFound.vue'),
     name: '404',
     meta: {
       title: '404',
@@ -194,7 +228,7 @@ export const constantRoute = [
   },
   {
     path: '/:pathMatch(.*)*',
-    redirect: '/404',
+    redirect: '/not-found',
     name: 'any',
     meta: {
       title: '任意路由',
@@ -202,4 +236,5 @@ export const constantRoute = [
       icon: 'Bill',
     },
   },
+  
 ]
